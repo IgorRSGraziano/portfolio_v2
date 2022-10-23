@@ -4,10 +4,15 @@ import React from "react";
 
 interface IProps {
     children: ReactNode;
+    className?: string;
 }
 
-const Container = ({ children }: IProps) => {
-    return <div className="bg-primary container">{children}</div>;
+const Container = ({ children, className }: IProps) => {
+    return (
+        <div className={`bg-primary container ${className || ""}`}>
+            {children}
+        </div>
+    );
 };
 
 export default Container;

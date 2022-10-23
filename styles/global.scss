@@ -16,12 +16,31 @@ body {
     background-color: $bodyColor;
 }
 
+h1,
+h2 {
+    color: $mainTextColor;
+}
+
+.text-accent {
+    color: $accentColor;
+}
+
 .text-primary {
     color: $mainTextColor;
 }
 
 .bg-primary {
     background-color: $backgroundColor;
+}
+
+.container-one {
+    margin: 13vh 0px 0% 12vh;
+}
+
+.container-two {
+    margin: 0px 12vh 0px 0px;
+    top: 0px;
+    right: 0px;
 }
 
 * {
@@ -65,13 +84,20 @@ nav li {
 
 .container {
     padding: 20px 50px 0px;
-    width: 40vw;
+    width: 50vw;
     max-height: 150vh;
     min-height: 87vh;
     border-radius: 7px;
     position: absolute;
     box-shadow: 1px 1px 20px 5px rgba(0, 0, 0, 0.185);
     transition: 0.7s;
+}
+
+.title {
+    color: $mainTextColor;
+    font-size: toRem(30);
+    margin: 5px unset;
+    font-weight: bold;
 }
 
 @keyframes underline {
@@ -86,6 +112,7 @@ nav li {
 .blinking-underline::after {
     content: " _";
     animation-name: underline;
+    color: currentColor;
     animation-duration: 1s;
     animation-iteration-count: infinite;
     animation-timing-function: steps(2, jump-none);

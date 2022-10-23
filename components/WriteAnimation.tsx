@@ -3,24 +3,26 @@ import React from "react";
 interface IProps {
     text: string;
     interval: number;
+    className?: string;
 }
 
-const WriteAnimation = ({ text, interval }: IProps) => {
+const WriteAnimation = ({ text, interval, className }: IProps) => {
     const [mountedText, setMountedText] = React.useState<string>("");
 
     React.useEffect(() => {
-        let tmpText = "> ";
+        let tmpText = "";
         text.split("").forEach(async (e, i) => {
-            await new Promise<void>((r) => {
-                setTimeout(() => {
-                    tmpText += e;
-                    setMountedText(tmpText);
-                }, interval * i);
-                r();
-            });
+            setTimeout(() => {
+                tmpText += e;
+                setMountedText(tmpText);
+            }, interval * i);
         });
     }, []);
-    return <div className="blinking-underline">{mountedText}</div>;
+    return (
+        <div className={`blinking-underline ${className || ""}`}>
+            {mountedText}
+        </div>
+    );
 };
 
 export default WriteAnimation;

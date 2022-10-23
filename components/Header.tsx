@@ -1,6 +1,6 @@
 function Header() {
     return (
-        <header className="flex justify-between">
+        <header className="flex justify-between items-center mt-9 mb-12">
             <strong className="html-tag text-primary font-bold text-2xl">
                 Igor Graziano
             </strong>
