@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@function toRem($value) {
+    @return ($value / 16) + rem;
+}
+
+$accentColor: #73ece5;
+$mainTextColor: #fff;
+$secondaryTextColor: #797f8d;
+$bodyColor: #797f8d;
+$backgroundColor: #202632;
+
+body {
+    background-color: $bodyColor;
+}
+
+.text-primary {
+    color: $mainTextColor;
+}
+
+.bg-primary {
+    background-color: $backgroundColor;
+}
+
+* {
+    cursor: default;
+    color: $secondaryTextColor;
+}
+
+.html-tag {
+    &::before {
+        content: "< ";
+        color: $accentColor;
+        font-weight: normal;
+    }
+    &::after {
+        content: " />";
+        color: $accentColor;
+        font-weight: normal;
+    }
+}
+
+nav li {
+    &::after {
+        content: "";
+        display: block;
+        height: 2px;
+        width: 0;
+        background-color: $accentColor;
+        margin-top: 4px;
+        transition: 0.3s;
+        position: absolute;
+    }
+    &:hover::after {
+        width: 100%;
+    }
+}
