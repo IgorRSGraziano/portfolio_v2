@@ -52,8 +52,24 @@ nav li {
         margin-top: 4px;
         transition: 0.3s;
         position: absolute;
+        transition: 0.3s;
     }
-    &:hover::after {
-        width: 100%;
+    &:hover {
+        transition: 0.3s;
+        color: $mainTextColor;
+        &::after {
+            width: 100%;
+        }
     }
+}
+
+.container {
+    padding: 20px 50px 0px;
+    width: 40vw;
+    max-height: 150vh;
+    min-height: 87vh;
+    border-radius: 7px;
+    position: absolute;
+    box-shadow: 1px 1px 20px 5px rgba(0, 0, 0, 0.185);
+    transition: 0.7s;
 }
