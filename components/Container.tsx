@@ -8,8 +8,15 @@ interface IProps {
 }
 
 const Container = ({ children, className }: IProps) => {
+    const [onFocus, setOnFocus] = React.useState<boolean>(false);
     return (
-        <div className={`bg-primary container ${className || ""}`}>
+        <div
+            className={`bg-primary container ${className || ""} ${
+                onFocus ? "z-10" : "blur-sm"
+            }`}
+            onMouseOver={() => setOnFocus(true)}
+            onMouseLeave={() => setOnFocus(false)}
+        >
             {children}
         </div>
     );
