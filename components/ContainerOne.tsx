@@ -4,9 +4,13 @@ import Header from "./Header";
 import Container from "./Container";
 import WriteAnimation from "./WriteAnimation";
 
-function ContainerOne() {
+interface IProps {
+    focus: boolean;
+}
+
+function ContainerOne({ focus }: IProps) {
     return (
-        <Container className="container-one">
+        <Container className="container-one" focus={focus}>
             <Header />
             <section>
                 <div className="flex ">

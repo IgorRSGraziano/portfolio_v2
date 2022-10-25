@@ -17,7 +17,7 @@ const WriteAnimation = ({ text, interval, className }: IProps) => {
                 setMountedText(tmpText);
             }, interval * i);
         });
-    }, []);
+    }, [text, interval]);
     return (
         <div className={`blinking-underline ${className || ""}`}>
             {mountedText}

@@ -5,17 +5,15 @@ import React from "react";
 interface IProps {
     children: ReactNode;
     className?: string;
+    focus: boolean;
 }
 
-const Container = ({ children, className }: IProps) => {
-    const [onFocus, setOnFocus] = React.useState<boolean>(false);
+const Container = ({ children, className, focus }: IProps) => {
     return (
         <div
             className={`bg-primary container ${className || ""} ${
-                onFocus ? "z-10" : "blur-sm"
+                focus ? "z-10" : "blur-sm"
             }`}
-            onMouseOver={() => setOnFocus(true)}
-            onMouseLeave={() => setOnFocus(false)}
         >
             {children}
         </div>
