@@ -3,14 +3,11 @@ import Image from "next/image";
 import Header from "./Header";
 import Container from "./Container";
 import WriteAnimation from "./WriteAnimation";
+import { useIndexContext } from "contexts/IndexContext";
 
-interface IProps {
-    focus: boolean;
-}
-
-function ContainerOne({ focus }: IProps) {
+function ContainerOne() {
     return (
-        <Container className="container-one" focus={focus}>
+        <Container className="container-one" containerId={1}>
             <Header />
             <section>
                 <div className="flex ">

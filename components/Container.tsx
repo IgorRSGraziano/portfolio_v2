@@ -1,19 +1,21 @@
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
 
-import React from "react";
+import { useIndexContext } from "contexts/IndexContext";
 
 interface IProps {
     children: ReactNode;
     className?: string;
-    focus: boolean;
+    containerId: number;
 }
 
-const Container = ({ children, className, focus }: IProps) => {
+const Container = ({ children, className, containerId }: IProps) => {
+    const { focusContainer, setFocusContainer } = useIndexContext();
     return (
         <div
             className={`bg-primary container ${className || ""} ${
-                focus ? "z-10" : "blur-sm"
+                focusContainer == containerId ? "z-10" : "blur-sm"
             }`}
+            onMouseEnter={() => setFocusContainer(containerId)}
         >
             {children}
         </div>
