@@ -11,7 +11,7 @@ interface IProps {
 function ContainerTwo({ focus }: IProps) {
     return (
         <div>
-            <Container className="container-two" focus={focus}>
+            <Container className="container-two" containerId={2}>
                 <Header />
                 <section>
                     <div className="flex ">

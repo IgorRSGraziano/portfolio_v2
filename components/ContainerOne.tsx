@@ -7,7 +7,7 @@ import { useIndexContext } from "contexts/IndexContext";
 
 function ContainerOne() {
     return (
-        <Container className="container-one" containerId={1}>
+        <Container className="container-one" id={1}>
             <Header />
             <section>
                 <div className="flex ">
