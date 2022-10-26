@@ -14,9 +14,7 @@ function Header() {
                             <li
                                 key={i}
                                 className="relative"
-                                onClick={() =>
-                                    setFocusSection([...focusSection, i + 1])
-                                }
+                                onClick={() => setFocusSection(i + 1)}
                             >
                                 {e}
                             </li>

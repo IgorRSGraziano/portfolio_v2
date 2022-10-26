@@ -10,17 +10,25 @@ interface IProps {
 }
 
 const Section = ({ children, className, id, containerId }: IProps) => {
-    const { focusContainer, setFocusContainer, focusSection, setFocusSection } =
-        useIndexContext();
+    const {
+        setBlockContainer,
+        setFocusContainer,
+        focusSection,
+        setFocusSection,
+    } = useIndexContext();
 
     const [isHighlight, setIsHighlight] = React.useState<boolean>(false);
 
     React.useEffect(() => {
-        if (focusSection.includes(id)) {
+        if (focusSection === id) {
             setFocusContainer(containerId);
-            setFocusSection(focusSection.filter((x) => x != id));
+            setBlockContainer(true);
+            setFocusSection(0);
             setIsHighlight(true);
-            setTimeout(() => setIsHighlight(false), 1000);
+            setTimeout(() => {
+                setIsHighlight(false);
+                setBlockContainer(false);
+            }, 1000);
         }
     }, [focusSection]);
 

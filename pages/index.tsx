@@ -9,12 +9,8 @@ const Home: NextPage = () => {
     return (
         <IndexContext>
             <main>
-                <div onMouseEnter={() => setFocus(1)}>
-                    <ContainerOne focus={focus == 1} />
-                </div>
-                <div onMouseEnter={() => setFocus(2)}>
-                    <ContainerTwo focus={focus == 2} />
-                </div>
+                <ContainerOne />
+                <ContainerTwo />
             </main>
         </IndexContext>
     );

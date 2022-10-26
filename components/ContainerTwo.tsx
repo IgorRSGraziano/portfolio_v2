@@ -5,11 +5,7 @@ import Container from "./Container";
 import WriteAnimation from "./WriteAnimation";
 import Section from "./Section";
 
-interface IProps {
-    focus: boolean;
-}
-
-function ContainerTwo({ focus }: IProps) {
+function ContainerTwo() {
     const containerId = 2;
     return (
         <div>

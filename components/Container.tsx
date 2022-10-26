@@ -15,7 +15,7 @@ const Container = ({ children, className, id }: IProps) => {
             className={`bg-primary container ${className || ""} ${
                 focusContainer == id ? "z-10" : "blur-sm"
             }`}
-            onMouseEnter={() => setFocusContainer(id)}
+            onMouseMove={() => setFocusContainer(id)}
         >
             {children}
         </div>
