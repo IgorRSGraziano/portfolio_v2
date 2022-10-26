@@ -7,13 +7,13 @@ interface IProps {
 interface IContext {
     focusContainer: number;
     setFocusContainer: (n: number) => void;
-    focusSection: number;
-    setFocusSection: (n: number) => void;
+    focusSection: number[];
+    setFocusSection: (n: number[]) => void;
 }
 
 const defaultValues: IContext = {
     focusContainer: 0,
-    focusSection: 0,
+    focusSection: [],
     setFocusContainer: () => {},
     setFocusSection: () => {},
 };
@@ -22,7 +22,7 @@ const Context = React.createContext<IContext>(defaultValues);
 
 const IndexContext = ({ children }: IProps) => {
     const [focusContainer, setFocusContainer] = React.useState<number>(1);
-    const [focusSection, setFocusSection] = React.useState<number>(0);
+    const [focusSection, setFocusSection] = React.useState<number[]>([]);
     return (
         <Context.Provider
             value={{

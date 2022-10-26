@@ -4,12 +4,14 @@ import Header from "./Header";
 import Container from "./Container";
 import WriteAnimation from "./WriteAnimation";
 import { useIndexContext } from "contexts/IndexContext";
+import Section from "./Section";
 
 function ContainerOne() {
+    const containerId = 1;
     return (
-        <Container className="container-one" id={1}>
+        <Container className="container-one" id={containerId}>
             <Header />
-            <section>
+            <Section id={1} containerId={containerId}>
                 <div className="flex ">
                     <div className="w-2/4">
                         <WriteAnimation
@@ -34,14 +36,14 @@ function ContainerOne() {
                         className="w-2/4"
                     />
                 </div>
-            </section>
-            <section>
+            </Section>
+            <Section id={2} containerId={containerId}>
                 <h3 className="title">Contato</h3>
                 <span>
                     Sinta-se a vontade para entrar em contato comigo, será um
                     prazer te atende-lo
                 </span>
-            </section>
+            </Section>
         </Container>
     );
 }

@@ -3,17 +3,19 @@ import Image from "next/image";
 import Header from "./Header";
 import Container from "./Container";
 import WriteAnimation from "./WriteAnimation";
+import Section from "./Section";
 
 interface IProps {
     focus: boolean;
 }
 
 function ContainerTwo({ focus }: IProps) {
+    const containerId = 2;
     return (
         <div>
-            <Container className="container-two" containerId={2}>
+            <Container className="container-two" id={containerId}>
                 <Header />
-                <section>
+                <Section id={3} containerId={containerId}>
                     <div className="flex ">
                         <div className="w-2/4">
                             <WriteAnimation
@@ -39,14 +41,14 @@ function ContainerTwo({ focus }: IProps) {
                             className="w-2/4"
                         />
                     </div>
-                </section>
-                <section>
+                </Section>
+                <Section id={4} containerId={containerId}>
                     <h3 className="title">Contato</h3>
                     <span>
                         Sinta-se a vontade para entrar em contato comigo, será
                         um prazer te atende-lo
                     </span>
-                </section>
+                </Section>
             </Container>
         </div>
     );

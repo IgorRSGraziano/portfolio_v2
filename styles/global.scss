@@ -16,6 +16,10 @@ body {
     background-color: $bodyColor;
 }
 
+section {
+    transition: 0.3s;
+}
+
 h1,
 h2 {
     color: $mainTextColor;
@@ -117,4 +121,15 @@ nav li {
     animation-iteration-count: infinite;
     animation-timing-function: steps(2, jump-none);
     font-size: toRem(16);
+}
+
+.section-highlight {
+    border-left: 4px solid $accentColor;
+    padding-left: 40px;
+    transition: 0.4s;
+}
+
+.section {
+    transition: 0.4s;
+    border-left: none;
 }
